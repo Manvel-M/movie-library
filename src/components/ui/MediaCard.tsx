@@ -5,7 +5,7 @@ type MediaCardProps =
 
 function MediaCard({ media, mediaType }: MediaCardProps) {
   return (
-    <div className="min-lg:w-[230px] min-lg:h-[410px] h-[330px] w-[180px] bg-card rounded-md flex flex-col">
+    <div className="flex-none min-lg:w-[230px] min-lg:h-[410px] h-[330px] w-[180px] bg-card rounded-md flex flex-col">
       <img
         className="rounded-t-md object-cover min-lg:h-[345px] h-[270px]"
         src={`https://image.tmdb.org/t/p/w342/${media.poster_path}`}
