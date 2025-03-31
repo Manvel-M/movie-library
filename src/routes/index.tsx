@@ -1,4 +1,5 @@
-import { useFetchTrending } from "@/hooks/useFetch";
+import TopRated from "@/components/home/TopRated";
+import Trending from "@/components/home/Trending";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -6,14 +7,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const { data, isPending, isFetching } = useFetchTrending({
-    requestType: "trending",
-    type: "movie",
-    time: "day",
-  });
-  if (isFetching || isPending) return ".............";
-  console.log(data);
-  return <div>Home</div>;
+  return (
+    <>
+      <Trending />
+      <TopRated />
+    </>
+  );
 }
 
 export default Index;

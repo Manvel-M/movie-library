@@ -1,7 +1,7 @@
-import { Fetch } from "@/types/fetch";
+import { Fetch, SearchResult } from "@/types/fetch";
 
 export const fetchHomeData = async (params: Fetch) => {
-  const URL = "http://localhost:8787";
+  const URL = "https://movie-library-worker.mnoker.workers.dev";
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -13,7 +13,8 @@ export const fetchHomeData = async (params: Fetch) => {
     if (!resp) {
       throw new Error("Failed to fetch data");
     }
-    return resp.json();
+    const data: SearchResult = await resp.json();
+    return data;
   } catch (error) {
     console.error(error);
   }
