@@ -40,7 +40,7 @@ function Trending() {
     .fill(null)
     .map((_, idx) => <LoadingCard key={idx} />);
   return (
-    <section className="max-w-[1440px] mx-auto ">
+    <section className="max-w-[1440px] mx-auto my-10">
       <div className="flex justify-between items-center py-4 px-5">
         <h2 className="text-center">
           TRENDING {mediaType === "movie" ? "MOVIES" : "TV"}{" "}

@@ -9,16 +9,17 @@ function AiringToday() {
   });
   if (isError) return `Error: ${error.message}`;
 
-  const renderMedia = data?.results.map((media) => (
-    <MediaCard key={media.id} media={media} mediaType="TV" />
-  ));
+  const renderMedia = data?.results.map((media) => {
+    if ("name" in media)
+      return <MediaCard key={media.id} media={media} mediaType="tv" />;
+  });
 
   const loadingSkeletons = Array(20)
     .fill(null)
     .map((_, idx) => <LoadingCard key={idx} />);
 
   return (
-    <section className="max-w-[1440px] mx-auto">
+    <section className="max-w-[1440px] mx-auto  mb-10">
       <div className="px-5 py-4">
         <h2>AIRING TODAY</h2>
       </div>
