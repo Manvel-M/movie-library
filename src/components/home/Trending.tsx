@@ -11,7 +11,7 @@ function Trending() {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("tv");
   const [time, setTime] = useState<"week" | "day">("week");
 
-  const { data, isPending, isFetching, isError, error } = useFetchData({
+  const { data, isFetching, isError, error } = useFetchData({
     requestType: "trending",
     type: mediaType,
     time: time,

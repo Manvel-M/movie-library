@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 
 function TopRated() {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("movie");
-  const { data, isPending, isFetching, isError, error } = useFetchData({
+  const { data, isFetching, isError, error } = useFetchData({
     requestType: "top_rated",
     type: mediaType,
   });
