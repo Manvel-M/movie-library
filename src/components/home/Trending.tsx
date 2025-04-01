@@ -6,19 +6,19 @@ import LoadingCard from "../LoadingCard";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Menu } from "lucide-react";
-import { Switch } from "../ui/switch";
 
 function Trending() {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("tv");
   const [time, setTime] = useState<"week" | "day">("week");
 
-  const { data, isFetching, isError, error } = useFetchData({
+  const { data, isPending, isFetching, isError, error } = useFetchData({
     requestType: "trending",
     type: mediaType,
     time: time,
   });
 
   if (isError) return `Error: ${error.message}`;
+
   const movies = data?.results.filter((_, idx) => idx < 20);
   const renderMedia = movies?.map((media) => {
     if (mediaType === "movie" && "title" in media) {
@@ -38,7 +38,7 @@ function Trending() {
 
   const loadingSkeletons = Array(20)
     .fill(null)
-    .map(() => <LoadingCard />);
+    .map((_, idx) => <LoadingCard key={idx} />);
   return (
     <section className="max-w-[1440px] mx-auto ">
       <div className="flex justify-between items-center py-4 px-5">

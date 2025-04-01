@@ -1,3 +1,4 @@
+import AiringToday from "@/components/home/AiringToday";
 import TopRated from "@/components/home/TopRated";
 import Trending from "@/components/home/Trending";
 import { createFileRoute } from "@tanstack/react-router";
@@ -11,6 +12,7 @@ function Index() {
     <>
       <Trending />
       <TopRated />
+      <AiringToday />
     </>
   );
 }

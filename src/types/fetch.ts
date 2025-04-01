@@ -1,5 +1,5 @@
 export type Fetch = {
-  requestType: "trending" | "top_rated" | "search";
+  requestType: "trending" | "top_rated" | "airing_today" | "search";
   type?: "movie" | "tv";
   time?: "week" | "day";
 };

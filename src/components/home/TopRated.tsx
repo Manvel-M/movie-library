@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 
 function TopRated() {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("movie");
-  const { data, isFetching, isError, error } = useFetchData({
+  const { data, isPending, isFetching, isError, error } = useFetchData({
     requestType: "top_rated",
     type: mediaType,
   });
@@ -30,7 +30,7 @@ function TopRated() {
   }
   const loadingSkeletons = Array(20)
     .fill(null)
-    .map(() => <LoadingCard />);
+    .map((_, idx) => <LoadingCard key={idx} />);
   return (
     <>
       <section className="max-w-[1440px] mx-auto px-5">
