@@ -33,8 +33,8 @@ function TopRated() {
     .map((_, idx) => <LoadingCard key={idx} />);
   return (
     <>
-      <section className="max-w-[1440px] mx-auto px-5  my-10">
-        <div className="flex justify-between items-center py-4">
+      <section className="max-w-[1440px] mx-auto my-10">
+        <div className="flex justify-between items-center py-4 px-5">
           <h2>TOP RATED {mediaType === "movie" ? "MOVIES" : "TV"}</h2>
           <Popover>
             <PopoverTrigger asChild>
