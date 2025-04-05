@@ -6,7 +6,6 @@ import LoadingCard from "../LoadingCard";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Menu } from "lucide-react";
-import { Switch } from "../ui/switch";
 
 function Trending() {
   const [mediaType, setMediaType] = useState<"movie" | "tv">("tv");
